@@ -17,7 +17,7 @@ app.use(json());
 app.use(
   cookieSession({
     signed: false,
-    secure: true
+    //secure: true
   })
 );
 
@@ -30,18 +30,19 @@ app.all('*', async (req, res) => {
   throw new NotFoundError();
 });
 
-app.use(errorHandler);
+app.use(errorHandler)
 
 const start = async () => {
-  if (!process.env.JWT_KEY) {
-    throw new Error('JWT_KEY must be defined');
-  }
+  // if (!process.env.JWT_KEY) {
+  //   throw new Error('JWT_KEY must be defined');
+  // }
 
-  try {
-    await mongoose.connect('mongodb://auth-mongo-srv:27017/auth', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true
+  try {//'mongodb://auth-mongo-srv:27017/auth'
+    // 'mongodb://10.96.26.26:27017/auth
+    await mongoose.connect('mongodb://127.0.0.1:27017/auth', {
+     // useNewUrlParser: true,
+      //useUnifiedTopology: true,
+     // useCreateIndex: true
     });
     console.log('Connected to MongoDb');
   } catch (err) {

@@ -36,14 +36,16 @@ router.post(
     if (!passwordsMatch) {
       throw new BadRequestError('Invalid Credentials');
     }
-
+ console.log("e " ,existingUser );
+   
     // Generate JWT
     const userJwt = jwt.sign(
       {
         id: existingUser.id,
         email: existingUser.email
       },
-      process.env.JWT_KEY!
+      "asdf"
+     // process.env.JWT_KEY!
     );
 
     // Store it on session object
