@@ -1,0 +1,8 @@
+
+POST 
+http://127.0.0.1:3000/api/users/signup
+
+{
+     "email":"rajbhesh4552@gmail.com",
+    "password":"123456622"
+}
