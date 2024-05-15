@@ -9,7 +9,7 @@ const start = async () => {
     //'mongodb://auth-mongo-srv:27017/auth'
     // 'mongodb://10.96.26.26:27017/auth
     await mongoose.connect("mongodb://127.0.0.1:27017/auth", {
-      // useNewUrlParser: true,
+       useNewUrlParser: true,
       //useUnifiedTopology: true,
       // useCreateIndex: true
     });
