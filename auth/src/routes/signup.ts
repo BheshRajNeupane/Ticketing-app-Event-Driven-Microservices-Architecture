@@ -3,7 +3,7 @@ import { body } from "express-validator";
 import jwt from "jsonwebtoken";
 
 import { User } from "../models/user";
-import{validateRequest ,BadRequestError } from '@bheshraj-ticketing/common';
+import { validateRequest, BadRequestError } from "@bheshraj-ticketing/common";
 // import { validateRequest } from "../middlewares/validate-request";
 // import { BadRequestError } from "../errors/bad-request-error";
 

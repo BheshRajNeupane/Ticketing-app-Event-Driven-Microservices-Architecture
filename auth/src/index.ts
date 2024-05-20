@@ -1,15 +1,19 @@
 import mongoose from "mongoose";
 import { app } from "./app";
 const start = async () => {
-  // if (!process.env.JWT_KEY) {
-  //   throw new Error('JWT_KEY must be defined');
-  // }
+  if (!process.env.JWT_KEY) {
+    throw new Error('JWT_KEY must be defined');
+  }
+    if (!process.env.MONGO_URI) {
+    throw new Error('MONGO_URI must be defined');
+  }
 
   try {
-    //'mongodb://auth-mongo-srv:27017/auth'
-    // 'mongodb://10.96.26.26:27017/auth
-    await mongoose.connect("mongodb://127.0.0.1:27017/auth", {
-       useNewUrlParser: true,
+   
+    await mongoose.connect(
+      // process.env.MONGO_URI
+      "mongodb://127.0.0.1:27017/auth", {
+      useNewUrlParser: true,
       //useUnifiedTopology: true,
       // useCreateIndex: true
     });
