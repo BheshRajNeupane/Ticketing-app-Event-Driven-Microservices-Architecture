@@ -1,7 +1,13 @@
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
-import { requireAuth, validateRequest } from "@bheshraj-ticketing/common";
+import {
+  currentUser,
+  requireAuth,
+  validateRequest,
+} from "@bheshraj-ticketing/common";
 import { Ticket } from "../models/ticket";
+import { TicketCreatedPublisher } from "../events/publishers/ticket-created-publisher";
+import { natsWrapper } from "../nats-wrapper";
 
 const router = express.Router();
 
@@ -18,6 +24,8 @@ router.post(
   async (req: Request, res: Response) => {
     const { title, price } = req.body;
 
+    console.log(req.session);
+    console.log(req.currentUser);
     const ticket = Ticket.build({
       title,
       price,
@@ -26,6 +34,13 @@ router.post(
 
     await ticket.save();
 
+    //Event publish
+    await new TicketCreatedPublisher(natsWrapper.client).publish({
+      id: ticket.id,
+      title: ticket.title,
+      price: ticket.price,
+      userId: ticket.userId,
+    });
     res.status(201).send(ticket);
   }
 );
