@@ -1,7 +1,8 @@
- npm public regisrty -> '@bheshraj-ticketing/common';
+ npm public registry -> '@bheshraj-ticketing/common';
  npm i @bheshraj-ticketing/common <br>
 **Common module**
 https://github.com/BheshRajNeupane/common-module-of-ticketing-app
+The common module contains shared logic, error handling, middleware, and event handling used across all services. This module ensures services are developed with consistent logic, error handling, and event structure, making the application more maintainable and scalable.
 
 
 # Ticketing Microservices Application
@@ -20,7 +21,7 @@ This project is a **ticketing application** where users can buy and sell tickets
 - [Installation and Setup](#installation-and-setup)
 - [Running the Application](#running-the-application)
 - [Event-Driven Communication (NATS)](#event-driven-communication-nats)
-- [Common Module](#common-module)
+- [Common Module](**Common module**)
 - [API Documentation](#api-documentation)
 - [Authentication and Authorization](#authentication-and-authorization)
 - [Concurrency and Scalability](#concurrency-and-scalability)
@@ -125,7 +126,7 @@ This application uses **event-driven microservices** with **NATS Streaming** for
 │   ├── k8s                  # Kubernetes YAML files for each service
 ├── common                   # Shared logic, error handling, middleware, events
 │   ├── errors               # Custom error handling classes
-│   ├── middleware           # Common middlewares (auth, validation, error handling)
+│   ├── middleware           # Common middleware (auth, validation, error handling)
 │   ├── events               # Base classes for publishers and listeners
 │   └── index.ts             # Export common modules for reuse across services
 └── README.md                # Project documentation
