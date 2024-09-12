@@ -1,8 +1,4 @@
- npm public registry -> '@bheshraj-ticketing/common';
- npm i @bheshraj-ticketing/common <br>
-**Common module**
-https://github.com/BheshRajNeupane/common-module-of-ticketing-app
-The common module contains shared logic, error handling, middleware, and event handling used across all services. This module ensures services are developed with consistent logic, error handling, and event structure, making the application more maintainable and scalable.
+
 
 
 # Ticketing Microservices Application
@@ -132,5 +128,11 @@ This application uses **event-driven microservices** with **NATS Streaming** for
 └── README.md                # Project documentation
 
 ```
+**PUBLIC REGISTRY**
+ npm public registry -> '@bheshraj-ticketing/common';
+ npm i @bheshraj-ticketing/common <br>
+**Common module**
+https://github.com/BheshRajNeupane/common-module-of-ticketing-app      <br>
+The common module contains shared logic, error handling, middleware, and event handling used across all services. This module ensures services are developed with consistent logic, error handling, and event structure, making the application more maintainable and scalable.
 
 **Documentation is updating soon..!!**
