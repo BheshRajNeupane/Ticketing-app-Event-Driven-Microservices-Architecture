@@ -18,13 +18,7 @@ This project is a **ticketing application** where users can buy and sell tickets
 - [Running the Application](#running-the-application)
 - [Event-Driven Communication (NATS)](#event-driven-communication-nats)
 - [Common Module](**Common module**)
-- [API Documentation](#api-documentation)
-- [Authentication and Authorization](#authentication-and-authorization)
-- [Concurrency and Scalability](#concurrency-and-scalability)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ---
 
@@ -135,4 +129,3 @@ This application uses **event-driven microservices** with **NATS Streaming** for
 https://github.com/BheshRajNeupane/common-module-of-ticketing-app      <br>
 The common module contains shared logic, error handling, middleware, and event handling used across all services. This module ensures services are developed with consistent logic, error handling, and event structure, making the application more maintainable and scalable.
 
-**Documentation is updating soon..!!**
